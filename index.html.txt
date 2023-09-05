@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header></header>
+      <ol>
+        <li>satu</li>
+        <li>dua</li>
+        <li>tiga</li>
+      </ol>
+      <ul>
+        <li>satu</li>
+        <li>dua</li>
+        <li>tiga</li>
+      </ul>
+      <div>
+        <h1>Testing</h1>
+        <h2>Testing</h2>
+        <h3>Testing</h3>
+        <h4>Testing</h4>
+        <h5>Testing</h5>
+        <h6>Testing</h6>
+        <p>Testestesteststestetsstststeststsetstsetetstesteststset</p>
+      </div>
+      <form>
+        <label>Testing</label><input type="text">
+        <select>
+          <option>tst 1</option>
+          <option>tst 2</option>
+          <option>tst 3</option>
+        </select>
+        <input type="checkbox">
+        <button type="submit">Submit</button>
+      </form>
+      <span>Testing</span>
+      <br>
+      <img>
+      <a href="youtube.com">Yotube</a>
+      <footer></footer>
+  </body>
+</html>
