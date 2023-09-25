@@ -1,0 +1,100 @@
+*, html{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    background-color: rgb(234, 233, 233);
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav, main header,
+main p,
+main ul{
+    font-family: sans-serif;
+}
+
+
+
+/*Setting Navbar*/
+
+nav header{
+    position: fixed;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li{
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+}
+
+nav{
+    border: 1px solid black;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    z-index: 1;
+}
+
+/*end of setting navbar*/
+
+/*Setting main*/
+
+header{
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+main p, main ul li{
+    margin: 20px 0 0 40px;
+}
+
+main ul{
+    margin-left: 60px;
+}
+
+code {
+    display: block;
+    padding: 10px;
+    margin-left:50px;
+    background-color: rgb(219, 219, 219);
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 3px
+}
+
+/*Resposive*/
+@media (max-width: 800px) {
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav{
+        position: relative;
+        height: 228px;
+        width: 100vw;
+    }
+
+    main{
+        margin-left: 20px;
+    }
+}
+
+@media (min-width: 800px){
+    main{
+        margin-left: 300px;
+    }
+}
