@@ -1,4 +1,3 @@
-// public/script.js
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
@@ -7,42 +6,41 @@ document.addEventListener('DOMContentLoaded', () => {
     searchButton.addEventListener('click', () => {
         const searchTerm = searchInput.value;
         if (searchTerm) {
-            fetchMovieDetails(searchTerm);
+            ngambil(searchTerm);
         }
     });
 
-    function fetchMovieDetails(searchTerm) {
-        // Replace 'YOUR_OMDB_API_KEY' with your actual OMDB API key
-        const apiKey = '6f12db4f';
-        const apiUrl = `https://www.omdbapi.com/?t=${searchTerm}&apikey=${apiKey}`;
+    function ngambil(nama) {
+        const kunci = '6f12db4f';
+        const url = `https://www.omdbapi.com/?t=${nama}&apikey=${kunci}`;
         
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', apiUrl, true);
+        const xml = new XMLHttpRequest();
+        xml.open('GET', url, true);
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                const data = JSON.parse(xhr.responseText);
+        xml.onreadystatechange = function () {
+            if (xml.readyState === 4 && xml.status === 200) {
+                const data = JSON.parse(xml.responseText);
                 if (data.Response === 'True') {
-                    displayMovieDetails(data);
+                    tampil(data);
                 } else {
                     movieDetails.innerHTML = '<p>Movie not found!</p>';
                 }
-            } else if (xhr.readyState === 4) {
-                console.error('Error fetching data:', xhr.status);
+            } else if (xml.readyState === 4) {
+                console.error('Error fetching data:', xml.status);
             }
         };
 
-        xhr.send();
+        xml.send();
     }
 
-    function displayMovieDetails(movie) {
+    function tampil(pilm) {
         const html = `
-            <h2>${movie.Title}</h2>
-            <p>Year: ${movie.Year}</p>
-            <p>Genre: ${movie.Genre}</p>
-            <p>Director: ${movie.Director}</p>
-            <p>Plot: ${movie.Plot}</p>
-            <img src="${movie.Poster}" alt="${movie.Title} Poster">
+            <h2>${pilm.Title}</h2>
+            <p>Year: ${pilm.Year}</p>
+            <p>Genre: ${pilm.Genre}</p>
+            <p>Director: ${pilm.Director}</p>
+            <p>Plot: ${pilm.Plot}</p>
+            <img src="${pilm.Poster}" alt="${pilm.Title} Poster">
         `;
         movieDetails.innerHTML = html;
     }
