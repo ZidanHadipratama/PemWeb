@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.Response === 'True') {
                     tampil(data);
                 } else {
-                    movieDetails.innerHTML = '<p>Movie not found!</p>';
+                    detail.innerHTML = '<p>Gaada :p</p>';
                 }
             } else if (xml.readyState === 4) {
-                console.error('Error fetching data:', xml.status);
+                console.error(xml.status);
             }
         };
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function tampil(pilm) {
         const html = `
             <h2>${pilm.Title}</h2>
-            <p>Year: ${pilm.Year}</p>
+            <p>Tahun: ${pilm.Year}</p>
             <p>Genre: ${pilm.Genre}</p>
             <p>Director: ${pilm.Director}</p>
             <p>Plot: ${pilm.Plot}</p>
