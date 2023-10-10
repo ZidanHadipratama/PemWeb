@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-    const movieDetails = document.getElementById('movieDetails');
+    const nginput = document.getElementById('nginput');
+    const klik = document.getElementById('buton');
+    const detail = document.getElementById('detail');
 
-    searchButton.addEventListener('click', () => {
-        const searchTerm = searchInput.value;
-        if (searchTerm) {
-            ngambil(searchTerm);
+    klik.addEventListener('click', () => {
+        const judul = nginput.value;
+        if (judul) {
+            ngambil(judul);
         }
     });
 
@@ -42,6 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>Plot: ${pilm.Plot}</p>
             <img src="${pilm.Poster}" alt="${pilm.Title} Poster">
         `;
-        movieDetails.innerHTML = html;
+        detail.innerHTML = html;
     }
 });
